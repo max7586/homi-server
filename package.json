@@ -1,5 +1,6 @@
 {
   "name": "homi-server",
+  "alias": "max7586-homi-server",
   "version": "0.0.1",
   "description": "Starter code for learning about authentication.",
   "private": true,
