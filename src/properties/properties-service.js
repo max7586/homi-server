@@ -32,6 +32,17 @@ const PropertiesService = {
       .groupBy('thg.id', 'usr.id')
   },
 
+  insertProperty(db, newProperty) {
+    return db
+      .insert(newProperty)
+      .into('homi_properties')
+      .returning('*')
+      .then(([property]) => property)
+      .then(property =>
+        PropertiesService.getById(db, property.id)
+      )
+  },
+
   getById(db, id) {
     return PropertiesService.getAllProperties(db)
       .where('thg.id', id)

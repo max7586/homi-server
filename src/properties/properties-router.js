@@ -1,8 +1,10 @@
 const express = require('express');
+const path = require('path');
 const PropertiesService = require('./properties-service');
 const { requireAuth } = require('../middleware/jwt-auth');
 
 const propertiesRouter = express.Router();
+const jsonBodyParser = express.json();
 
 propertiesRouter.route('/').get((req, res, next) => {
   PropertiesService.getAllProperties(req.app.get('db'))
@@ -11,6 +13,31 @@ propertiesRouter.route('/').get((req, res, next) => {
     })
     .catch(next);
 });
+
+
+propertiesRouter
+.route('/')
+.post(requireAuth, jsonBodyParser, (req, res, next) => {
+  const { title, content, image } = req.body;
+  const newProperty = { title, content, image };
+
+  for (const [key, value] of Object.entries(newProperty))
+    if (value == null)
+      return res.status(400).json({
+        error: `Missing '${key}' in request body`
+      });
+      
+  newProperty.user_id = req.user.id
+  PropertiesService.insertProperty(req.app.get('db'), newProperty)
+    .then(property => {
+      res
+        .status(201)
+        .location(path.posix.join(req.originalUrl, `/`))
+        .json(PropertiesService.serializeProperty(property));
+    })
+    .catch(next);
+});
+
 
 propertiesRouter
   .route('/:property_id')
