@@ -1,4 +1,44 @@
-# homi Server
+  # ![WebApp](https://max7586.github.io/homi-client/images/demo/landingPage.png)
+
+# Homi -- web Application
+
+> HOMI is a simple real-estate management app
+
+## Table of contents
+
+- [App Description](#app-description)
+- [Live Demo](https://homi-client.ahmedmax7586.now.sh)
+- [client-site repo](https://github.com/max7586/homi-client)
+- [Built with](#build-with)
+- [Setting Up](#setting-up)
+- [Configuring Postgres](#configuring-postgres)
+- [Sample Data](#sample-data)
+- [Scripts](#scripts)
+- [Development](#development)
+
+
+
+## App Description
+
+<table>
+<tr>
+<td>
+  HOMI is a real-estate management app. It's a full-stack web-app build with React, CSS, Node, Express, and Postgresql. This application allows a user to add their house for sale,  buy houses from the list. User can find rental houses and as well as can rent their own house. This app helps the user to find an agent to help purchase house. This website does not use any third-party API. This website is supported on Chrome, Firefox, and Safari. This app is a fully responsive website. This app is totally responsive. This app is Followed by semantic HTML and the React-ful design pattern. And this app also have a11y.
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+## Built with
+
+- Node
+- Express
+- PostgreSQL
 
 ## Setting Up
 
@@ -13,7 +53,7 @@
 - Bootstrap development database: `MIGRATION_DB_NAME=homi npm run migrate`
 - Bootstrap test database: `MIGRATION_DB_NAME=homi-test npm run migrate`
 
-### Configuring Postgres
+## Configuring Postgres
 
 For tests involving time to run properly, your Postgres database must be configured to run in the UTC timezone.
 
@@ -39,3 +79,19 @@ timezone = 'UTC'
 
 - Start application for development: `npm run dev`
 - Run tests: `npm test`
+
+
+## Development
+
+Want to contribute? Great!
+
+To fix a bug or enhance an existing module, follow these steps:
+
+- Fork the repo
+- Create a new branch (`git checkout -b improve-feature`)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (`git commit -am 'Improve feature'`)
+- Push to the branch (`git push origin improve-feature`)
+- Create a Pull Request
+
