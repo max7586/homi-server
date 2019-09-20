@@ -9,7 +9,7 @@
 - [App Description](#app-description)
 - [Live Demo](https://homi-client.ahmedmax7586.now.sh)
 - [client-site repo](https://github.com/max7586/homi-client)
-- [Built with](#build-with)
+- [Built with](#built-with)
 - [Setting Up](#setting-up)
 - [Configuring Postgres](#configuring-postgres)
 - [Sample Data](#sample-data)
